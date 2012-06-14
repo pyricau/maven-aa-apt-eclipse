@@ -53,10 +53,33 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-					<annotationProcessors>
-						<annotationProcessor>com.googlecode.androidannotations.AndroidAnnotationProcessor</annotationProcessor>
-					</annotationProcessors>
+					<compilerArgument>-proc:none</compilerArgument>
+					<!-- <annotationProcessors> -->
+					<!-- <annotationProcessor>com.googlecode.androidannotations.AndroidAnnotationProcessor</annotationProcessor> -->
+					<!-- </annotationProcessors> -->
 				</configuration>
+				<!-- <dependencies> -->
+				<!-- <dependency> -->
+				<!-- <groupId>com.googlecode.androidannotations</groupId> -->
+				<!-- <artifactId>androidannotations</artifactId> -->
+				<!-- <version>2.6-SNAPSHOT</version> -->
+				<!-- </dependency> -->
+				<!-- </dependencies> -->
+			</plugin>
+
+			<plugin>
+				<groupId>org.bsc.maven</groupId>
+				<artifactId>maven-processor-plugin</artifactId>
+				<version>2.0.5</version>
+				<executions>
+					<execution>
+						<id>process</id>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
 				<dependencies>
 					<dependency>
 						<groupId>com.googlecode.androidannotations</groupId>
@@ -65,6 +88,7 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>
